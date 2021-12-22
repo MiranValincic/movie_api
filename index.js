@@ -114,6 +114,54 @@ app.get("/movies", (req, res) => {
   res.json(movies);
 });
 
+// Get specific movie by name
+app.get("/movies/:title", (req, res) => {
+  res.status(200).json(
+    movies.find((movie) => {
+      return movie.title === req.params.title;
+    })
+  );
+});
+
+// Get genre
+app.get("/genres/:genre", (req, res) => {
+  res.status(200).send("Successful get request");
+});
+
+// Return data about director.
+app.get("/directors/:name", (req, res) => {
+  res.status(200).json(
+    movies.find((movie) => {
+      return movie.director.name === req.params.name;
+    })
+  );
+});
+
+// Create new user
+app.post("/users/create", (req, res) => {
+  res.send("Successfully created a user!");
+});
+
+// Update specific user information
+app.put("/users/update", (req, res) => {
+  res.send("Successfully updated user information!");
+});
+
+// Delete user
+app.delete("/users/:id", (req, res) => {
+  res.send("Successfully deleted user!");
+});
+
+// Add movie to favourites
+app.post("/movies/add-to-favourites", (req, res) => {
+  res.send("Successfully added movie to favourites!");
+});
+
+// Delete movie from favourites
+app.delete("/movies/delete-from-favourites/:id", (req, res) => {
+  res.send("Successfully deleted movie from favourites!");
+});
+
 app.use(express.static("public"));
 
 app.use((err, req, res, next) => {

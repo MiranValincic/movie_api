@@ -14,6 +14,68 @@
         movies, directors, and genres. Users will be able to sign up, update their
         personal information, and create a list of their favorite movies.
     </p>
+    <table>
+        <tr>
+            <th>Request</th>
+            <th>URL</th>
+            <th>HTTP Method</th>
+            <th>Response</th>
+        </tr>
+        <tr>
+            <td>Get a list of all movies</td>
+            <td>/movies</td>
+            <td>GET</td>
+            <td>A JSON object holding data about all movies.</td>
+        </tr>
+        <tr>
+            <td>Get specific movie by name</td>
+            <td>/movies/[title]</td>
+            <td>GET</td>
+            <td>A JSON object holding data about a specific movie.</td>
+        </tr>
+        <tr>
+            <td>Get data about a genre by name.</td>
+            <td>/genres/[genre]</td>
+            <td>GET</td>
+            <td>A JSON object holding data about a specific genre.</td>
+        </tr>
+        <tr>
+            <td>Get data about movie director</td>
+            <td>/directors/[name]</td>
+            <td>GET</td>
+            <td>A JSON object holding data about a movie director.</td>
+        </tr>
+        <tr>
+            <td>Create new user</td>
+            <td>/users/[create]</td>
+            <td>POST</td>
+            <td>A JSON object holding data about a user that was added.</td>
+        </tr>
+        <tr>
+            <td>Update specific user information</td>
+            <td>/users/[update]</td>
+            <td>PUT</td>
+            <td>A JSON object holding data about a user that was updated.</td>
+        </tr>
+        <tr>
+            <td>Delete user</td>
+            <td>/users/[delete]</td>
+            <td>DELETE</td>
+            <td>A string that indicates whether the user was deleted.</td>
+        </tr>
+        <tr>
+            <td>Add movie to favourites</td>
+            <td>/movies/add-to-favourites</td>
+            <td>POST</td>
+            <td>A string confirming which movie was added successfully to favourites.</td>
+        </tr>
+        <tr>
+            <td>Delete movie from favourites</td>
+            <td>/movies/delete-from-favourites/[id]</td>
+            <td>DELETE</td>
+            <td>A string that indicates whether the movie was successfully removed from favourites.</td>
+        </tr>
+    </table>
 </body>
 
 </html>
