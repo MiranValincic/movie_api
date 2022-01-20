@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 
 const app = express();
-
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -139,28 +138,31 @@ app.get("/directors/:name", (req, res) => {
 
 // Create new user
 app.post("/users/create", (req, res) => {
-  res.send("Successfully created a user!");
+  res.send("Successfully created user!");
 });
 
 // Update specific user information
-app.put("/users/update", (req, res) => {
+app.put("/:userId", (req, res) => {
   res.send("Successfully updated user information!");
 });
 
 // Delete user
-app.delete("/users/:id", (req, res) => {
+app.delete("/users/:userId", (req, res) => {
   res.send("Successfully deleted user!");
 });
 
 // Add movie to favourites
-app.post("/movies/add-to-favourites", (req, res) => {
+app.post("/users/:userId/movies/:movieId/add-to-favourites", (req, res) => {
   res.send("Successfully added movie to favourites!");
 });
 
 // Delete movie from favourites
-app.delete("/movies/delete-from-favourites/:id", (req, res) => {
-  res.send("Successfully deleted movie from favourites!");
-});
+app.delete(
+  "/users/:userId/movies/:movieId/delete-from-favourites/",
+  (req, res) => {
+    res.send("Successfully deleted movie from favourites!");
+  }
+);
 
 app.use(express.static("public"));
 

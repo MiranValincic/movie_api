@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Document</title>
 </head>
 
@@ -20,60 +21,81 @@
             <th>URL</th>
             <th>HTTP Method</th>
             <th>Response</th>
+            <th>Request body data format</th>
         </tr>
         <tr>
             <td>Get a list of all movies</td>
             <td>/movies</td>
             <td>GET</td>
             <td>A JSON object holding data about all movies.</td>
+            <td>None</td>
         </tr>
         <tr>
             <td>Get specific movie by name</td>
-            <td>/movies/[title]</td>
+            <td>/movies/:movieId</td>
             <td>GET</td>
             <td>A JSON object holding data about a specific movie.</td>
+            <td>None</td>
         </tr>
         <tr>
             <td>Get data about a genre by name.</td>
-            <td>/genres/[genre]</td>
+            <td>/genres/:genre</td>
             <td>GET</td>
             <td>A JSON object holding data about a specific genre.</td>
+            <td>None</td>
         </tr>
         <tr>
             <td>Get data about movie director</td>
-            <td>/directors/[name]</td>
+            <td>/directors/:name</td>
             <td>GET</td>
             <td>A JSON object holding data about a movie director.</td>
+            <td>None</td>
         </tr>
         <tr>
             <td>Create new user</td>
-            <td>/users/[create]</td>
+            <td>/users/create</td>
             <td>POST</td>
             <td>A JSON object holding data about a user that was added.</td>
+            <td>A JSON object holding data about the new user, structured like: <br>
+                { <br>
+                "firstName": "John", <br>
+                "lastName": "Doe", <br>
+                "age": 30, <br>
+                }
+            </td>
         </tr>
         <tr>
             <td>Update specific user information</td>
-            <td>/users/[update]</td>
+            <td>/:userId</td>
             <td>PUT</td>
             <td>A JSON object holding data about a user that was updated.</td>
+            <td>None</td>
         </tr>
         <tr>
             <td>Delete user</td>
-            <td>/users/[delete]</td>
+            <td>/users/:userId/delete</td>
             <td>DELETE</td>
             <td>A string that indicates whether the user was deleted.</td>
+            <td>None</td>
         </tr>
         <tr>
             <td>Add movie to favourites</td>
-            <td>/movies/add-to-favourites</td>
+            <td>/users/:userId/movies/:movieId/add-to-favourites</td>
             <td>POST</td>
             <td>A string confirming which movie was added successfully to favourites.</td>
+            <td>A JSON object holding data about film, structured like: <br>
+                { <br>
+                title: "Avengers: Endgame", <br>
+                year: "2019", <br>
+                }
+            </td>
         </tr>
         <tr>
             <td>Delete movie from favourites</td>
-            <td>/movies/delete-from-favourites/[id]</td>
+            <td>/users/:userId/movies/:movieId/delete-from-favourites/</td>
             <td>DELETE</td>
             <td>A string that indicates whether the movie was successfully removed from favourites.</td>
+            <td>None</td>
         </tr>
     </table>
 </body>

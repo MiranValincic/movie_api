@@ -1,0 +1,18 @@
+h1 {
+  display: flex;
+  justify-content: center;
+}
+p {
+  display: flex;
+  margin-top: 5%;
+  justify-content: center;
+  width: 100%;
+}
+table {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+td {
+  border: 1px solid black;
+}
