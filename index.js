@@ -142,7 +142,7 @@ app.post("/users/create", (req, res) => {
 });
 
 // Update specific user information
-app.put("/:userId", (req, res) => {
+app.put("/users/:userId", (req, res) => {
   res.send("Successfully updated user information!");
 });
 
@@ -152,17 +152,14 @@ app.delete("/users/:userId", (req, res) => {
 });
 
 // Add movie to favourites
-app.post("/users/:userId/movies/:movieId/add-to-favourites", (req, res) => {
+app.post("/users/:userId/:movieId/favorites", (req, res) => {
   res.send("Successfully added movie to favourites!");
 });
 
 // Delete movie from favourites
-app.delete(
-  "/users/:userId/movies/:movieId/delete-from-favourites/",
-  (req, res) => {
-    res.send("Successfully deleted movie from favourites!");
-  }
-);
+app.delete("/users/:userId/:movieId/favorites", (req, res) => {
+  res.send("Successfully deleted movie from favourites!");
+});
 
 app.use(express.static("public"));
 

@@ -66,7 +66,7 @@
         </tr>
         <tr>
             <td>Update specific user information</td>
-            <td>/:userId</td>
+            <td>/users/:userId</td>
             <td>PUT</td>
             <td>A JSON object holding data about a user that was updated.</td>
             <td>None</td>
@@ -80,7 +80,7 @@
         </tr>
         <tr>
             <td>Add movie to favourites</td>
-            <td>/users/:userId/movies/:movieId/add-to-favourites</td>
+            <td>/users/:userId/:movieId/favorites</td>
             <td>POST</td>
             <td>A string confirming which movie was added successfully to favourites.</td>
             <td>A JSON object holding data about film, structured like: <br>
@@ -92,7 +92,7 @@
         </tr>
         <tr>
             <td>Delete movie from favourites</td>
-            <td>/users/:userId/movies/:movieId/delete-from-favourites/</td>
+            <td>/users/:userId/:movieId/favorites</td>
             <td>DELETE</td>
             <td>A string that indicates whether the movie was successfully removed from favourites.</td>
             <td>None</td>
