@@ -137,7 +137,7 @@ app.get("/directors/:name", (req, res) => {
 });
 
 // Create new user
-app.post("/users/create", (req, res) => {
+app.post("/users", (req, res) => {
   res.send("Successfully created user!");
 });
 
@@ -152,12 +152,12 @@ app.delete("/users/:userId", (req, res) => {
 });
 
 // Add movie to favourites
-app.post("/users/:userId/:movieId/favorites", (req, res) => {
+app.post("/users/:userId/favorites/:movieId", (req, res) => {
   res.send("Successfully added movie to favourites!");
 });
 
 // Delete movie from favourites
-app.delete("/users/:userId/:movieId/favorites", (req, res) => {
+app.delete("/users/:userId/favorites/:movieId", (req, res) => {
   res.send("Successfully deleted movie from favourites!");
 });
 

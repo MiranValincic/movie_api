@@ -53,7 +53,7 @@
         </tr>
         <tr>
             <td>Create new user</td>
-            <td>/users/create</td>
+            <td>/users</td>
             <td>POST</td>
             <td>A JSON object holding data about a user that was added.</td>
             <td>A JSON object holding data about the new user, structured like: <br>
@@ -80,7 +80,7 @@
         </tr>
         <tr>
             <td>Add movie to favourites</td>
-            <td>/users/:userId/:movieId/favorites</td>
+            <td>/users/:userId/favorites/:movieId</td>
             <td>POST</td>
             <td>A string confirming which movie was added successfully to favourites.</td>
             <td>A JSON object holding data about film, structured like: <br>
@@ -92,7 +92,7 @@
         </tr>
         <tr>
             <td>Delete movie from favourites</td>
-            <td>/users/:userId/:movieId/favorites</td>
+            <td>/users/:userId/favorites/:movieId</td>
             <td>DELETE</td>
             <td>A string that indicates whether the movie was successfully removed from favourites.</td>
             <td>None</td>
