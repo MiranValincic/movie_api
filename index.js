@@ -14,6 +14,29 @@ app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(methodOverride());
 
+let users = [
+  {
+    userId: 1,
+    name: "Miran",
+    surname: "Valincic",
+  },
+  {
+    userId: 2,
+    name: "Ivan",
+    surname: "Horvat",
+  },
+  {
+    userId: 3,
+    name: "Ivan",
+    surname: "Sabolic",
+  },
+  {
+    userId: 4,
+    name: "Tin",
+    surname: "Valincic",
+  },
+];
+
 let movies = [
   {
     title: "Captain America: The first Avenger",
@@ -113,6 +136,10 @@ app.get("/movies", (req, res) => {
   res.json(movies);
 });
 
+app.get("/users", (req, res) => {
+  res.json(users);
+});
+
 // Get specific movie by name
 app.get("/movies/:title", (req, res) => {
   res.status(200).json(
@@ -143,7 +170,17 @@ app.post("/users", (req, res) => {
 
 // Update specific user information
 app.put("/users/:userId", (req, res) => {
-  res.send("Successfully updated user information!");
+  const { userId } = req.params;
+  const updatedUser = req.body;
+
+  let user = users.find((user) => user.userId == userId);
+
+  if (user) {
+    user.name = updatedUser.name;
+    res.status(200).json(user);
+  } else {
+    res.status(400).send("no such user");
+  }
 });
 
 // Delete user
