@@ -18,22 +18,22 @@ let users = [
   {
     userId: 1,
     name: "Miran",
-    surname: "Valincic",
+    lastName: "Valincic",
   },
   {
     userId: 2,
     name: "Ivan",
-    surname: "Horvat",
+    lastName: "Horvat",
   },
   {
     userId: 3,
     name: "Ivan",
-    surname: "Sabolic",
+    lastName: "Sabolic",
   },
   {
     userId: 4,
     name: "Tin",
-    surname: "Valincic",
+    lastName: "Valincic",
   },
 ];
 
