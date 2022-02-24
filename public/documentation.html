@@ -58,27 +58,26 @@
             <td>A JSON object holding data about a user that was added.</td>
             <td>A JSON object holding data about the new user, structured like: <br>
                 { <br>
-                "userId": 1
-                "firstName": "John", <br>
-                "lastName": "Doe", <br>
-                "age": 30, <br>
+                "Name": "militao", <br>
+                "Born": "1995/02/15", <br>
+                "Email": "mirannn@gmail.com" <br>
                 }
             </td>
         </tr>
         <tr>
             <td>Update specific user information</td>
-            <td>/users/:userId</td>
+            <td>/users/:Name</td>
             <td>PUT</td>
             <td>A JSON object holding data about a user that was updated.</td>
             <td>A JSON object holding data used to update the user, structured like: <br>
                 {
-                "lastName": "Otto" <br>
+                "Name": "Otto" <br>
                 }
             </td>
         </tr>
         <tr>
             <td>Delete user</td>
-            <td>/users/:userId</td>
+            <td>/users/:Name</td>
             <td>DELETE</td>
             <td>A string that indicates whether the user was deleted.</td>
             <td>None</td>
