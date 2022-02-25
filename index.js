@@ -51,7 +51,7 @@ app.get("/movies", (req, res) => {
 });
 
 // Get specific movie by name
-app.get("/movies/:title", (req, res) => {
+app.get("/movies/:Title", (req, res) => {
   Movies.findOne({ Title: req.params.Title })
     .then((movie) => {
       res.json(movie);
@@ -63,10 +63,10 @@ app.get("/movies/:title", (req, res) => {
 });
 
 // Get genre
-app.get("/genres/:Name", (req, res) => {
-  Genres.findOne({ Name: req.params.Name })
-    .then((genre) => {
-      res.json(genre.Description);
+app.get("/genre/:Name", (req, res) => {
+  Movies.findOne({ "Genre.Name": req.params.Name })
+    .then((movie) => {
+      res.json(movie.Genre.Description);
     })
     .catch((err) => {
       console.error(err);
@@ -75,12 +75,15 @@ app.get("/genres/:Name", (req, res) => {
 });
 
 // Return data about director.
-app.get("/directors/:name", (req, res) => {
-  res.status(200).json(
-    movies.find((movie) => {
-      return movie.director.name === req.params.name;
+app.get("/directors/:Name", (req, res) => {
+  Movies.findOne({ "Director.Name": req.params.Name })
+    .then((movie) => {
+      res.json(movie.Director);
     })
-  );
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+    });
 });
 
 // Create new user
@@ -150,11 +153,11 @@ app.delete("/users/:Name", (req, res) => {
 });
 
 // Add movie to favourites
-app.post("/users/:userId/favorites/:movieId", (req, res) => {
+app.post("/users/:Name/favorites/:MovieId", (req, res) => {
   Users.findOneAndUpdate(
-    { Username: req.params.Username },
+    { Name: req.params.Name },
     {
-      $push: { FavoriteMovies: req.params.MovieID },
+      $push: { FavoriteMovies: req.params.MovieId },
     },
     { new: true },
     (err, updatedUser) => {

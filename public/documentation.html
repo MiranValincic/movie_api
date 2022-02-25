@@ -32,21 +32,21 @@
         </tr>
         <tr>
             <td>Get specific movie by name</td>
-            <td>/movies/:movieId</td>
+            <td>/movies/:Title</td>
             <td>GET</td>
             <td>A JSON object holding data about a specific movie.</td>
             <td>None</td>
         </tr>
         <tr>
             <td>Get data about a genre by name.</td>
-            <td>/genres/:genre</td>
+            <td>/genre/:Name</td>
             <td>GET</td>
             <td>A JSON object holding data about a specific genre.</td>
             <td>None</td>
         </tr>
         <tr>
             <td>Get data about movie director</td>
-            <td>/directors/:name</td>
+            <td>/directors/:Name</td>
             <td>GET</td>
             <td>A JSON object holding data about a movie director.</td>
             <td>None</td>
@@ -84,7 +84,7 @@
         </tr>
         <tr>
             <td>Add movie to favourites</td>
-            <td>/users/:userId/favorites/:movieId</td>
+            <td>/users/:Name/favorites/:MovieId</td>
             <td>POST</td>
             <td>A string confirming which movie was added successfully to favourites.</td>
             <td>None
@@ -92,7 +92,7 @@
         </tr>
         <tr>
             <td>Delete movie from favourites</td>
-            <td>/users/:userId/favorites/:movieId</td>
+            <td>/users/:Name/favorites/:MovieId</td>
             <td>DELETE</td>
             <td>A string that indicates whether the movie was successfully removed from favourites.</td>
             <td>None</td>
