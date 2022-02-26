@@ -85,7 +85,7 @@ app.get(
   (req, res) => {
     Movies.findOne({ "Genre.Name": req.params.Name })
       .then((movie) => {
-        res.json(movie.Genre.Description);
+        res.json(movie.Genre);
       })
       .catch((err) => {
         console.error(err);
@@ -211,10 +211,22 @@ app.post(
 
 // Delete movie from favourites
 app.delete(
-  "/users/:userId/favorites/:movieId",
+  "/users/:Name/favorites/:MovieID",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    res.send("Successfully deleted movie from favourites!");
+    Users.findOneAndUpdate(
+      { Name: req.params.Name },
+      { $pull: { FavoriteMovies: req.params.MovieID } },
+      { new: true },
+      (err, updatedUser) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send("Error: " + err);
+        } else {
+          res.json(updatedUser);
+        }
+      }
+    );
   }
 );
 
