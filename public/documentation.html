@@ -86,16 +86,31 @@
             <td>Add movie to favourites</td>
             <td>/users/:Name/favorites/:MovieId</td>
             <td>POST</td>
-            <td>A string confirming which movie was added successfully to favourites.</td>
-            <td>None
+            <td>A JSON object holding data about a user where movie was added</td>
+            <td>A JSON object holding data about a user where movie was added,structured like: <br>
+                { <br>
+                "Name": "Mared5", <br>
+                "Born": "1995-02-01T23:00:00.000Z", <br>
+                "Email": "mare@gmail.com",<br>
+                "Password": "1234",<br>
+                "FavoriteMovies": [ <br>
+                "62162abdae70179e807a3eb2"] <br>
+                }
             </td>
         </tr>
         <tr>
             <td>Delete movie from favourites</td>
             <td>/users/:Name/favorites/:MovieId</td>
             <td>DELETE</td>
-            <td>A string that indicates whether the movie was successfully removed from favourites.</td>
-            <td>None</td>
+            <td>A JSON object holding data about a user where movie was deleted.</td>
+            <td>A JSON object holding data about a user where movie was deleted,structured like: <br>
+                { <br>
+                "Name": "Mared5", <br>
+                "Born": "1995-02-01T23:00:00.000Z", <br>
+                "Email": "mare@gmail.com",<br>
+                "Password": "1234",<br>
+                "FavoriteMovies": [] <br>
+                }</td>
         </tr>
     </table>
 </body>
