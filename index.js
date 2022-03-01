@@ -147,8 +147,8 @@ app.post(
       "Name",
       "Name contains non alphanumeric characters - not allowed."
     ).isAlphanumeric(),
-    check("Password", "Password is required").not().isEmpty(),
     check("Email", "Email does not appear to be valid").isEmail(),
+    check("Password", "Password is required").not().isEmpty(),
   ],
   (req, res) => {
     let errors = validationResult(req);
