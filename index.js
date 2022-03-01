@@ -189,6 +189,15 @@ app.post(
 app.put(
   "/users/:Name",
   passport.authenticate("jwt", { session: false }),
+  [
+    check("Name", "Name is required").isLength({ min: 5 }),
+    check(
+      "Name",
+      "Name contains non alphanumeric characters - not allowed."
+    ).isAlphanumeric(),
+    check("Email", "Email does not appear to be valid").isEmail(),
+    check("Password", "Password is required").not().isEmpty(),
+  ],
   (req, res) => {
     Users.findOneAndUpdate(
       { Name: req.params.Name },
