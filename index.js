@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const { check, validationResult } = require("express-validator");
 const cors = require("cors");
+const passport = require("passport");
 const mongoose = require("mongoose");
 const Models = require("./models.js");
 const methodOverride = require("method-override");
@@ -17,7 +18,12 @@ app.use(
 const Users = Models.User;
 const Movies = Models.Movie;
 
-mongoose.connect("mongodb://localhost:27017/test", {
+// mongoose.connect("mongodb://localhost:27017/test", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
+mongoose.connect(process.env.CONNECTION_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -44,7 +50,6 @@ app.use(
 );
 
 let auth = require("./auth")(app);
-const passport = require("passport");
 require("./passport");
 
 app.get(
