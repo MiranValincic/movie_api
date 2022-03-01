@@ -52,6 +52,10 @@ app.use(
 let auth = require("./auth")(app);
 require("./passport");
 
+app.get("/", (req, res) => {
+  res.send("Welcome to my movie API");
+});
+
 app.get(
   "/users",
   passport.authenticate("jwt", { session: false }),
