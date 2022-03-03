@@ -32,7 +32,11 @@ app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-let allowedOrigins = ["http://localhost:8080", "http://testsite.com"];
+let allowedOrigins = [
+  "http://localhost:8080",
+  "http://testsite.com",
+  "http://localhost:1234",
+];
 
 app.use(
   cors({
