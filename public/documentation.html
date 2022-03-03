@@ -65,6 +65,25 @@
             </td>
         </tr>
         <tr>
+            <td>Login</td>
+            <td>/login</td>
+            <td>POST</td>
+            <td>A JSON object holding data about a user who was logged in</td>
+            <td>A JSON object holding data about the logged in user, structured like: <br>
+                "user": { <br>
+                "_id": "621e0cf3b9cc4f68235ea2be", <br>
+                "Name": "Miki9", <br>
+                "Born": "1995-02-02T00:00:00.000Z", <br>
+                "Email": "mare@gmail.com", <br>
+                "Password": "$2b$10$cycqj8dP.QbT7ry/CMFWNOuDSXpx109MHLdvEVeaIdWSDFpAuqaeu", <br>
+                "FavoriteMovies": [], <br>
+                "__v": 0 <br>
+                }, <br>
+                "token": "" <br>
+                }
+            </td>
+        </tr>
+        <tr>
             <td>Update specific user information</td>
             <td>/users/:Name</td>
             <td>PUT</td>
