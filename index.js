@@ -97,7 +97,7 @@ app.get(
 // Get specific movie by name
 app.get(
   "/movies/:Title",
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Movies.findOne({ Title: req.params.Title })
       .then((movie) => {
@@ -113,7 +113,7 @@ app.get(
 // Get genre
 app.get(
   "/genre/:Name",
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Movies.findOne({ "Genre.Name": req.params.Name })
       .then((movie) => {
@@ -129,7 +129,7 @@ app.get(
 // Return data about director.
 app.get(
   "/directors/:Name",
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Movies.findOne({ "Director.Name": req.params.Name })
       .then((movie) => {
