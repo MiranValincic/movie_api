@@ -77,6 +77,21 @@ app.get(
   }
 );
 
+app.get(
+  "users/:Name",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Users.find()
+      .then((users) => {
+        res.status(201).json(users);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      });
+  }
+);
+
 app.get("/secreturl", (req, res) => {
   res.send("This is a secret url with super top-secret content.");
 });
