@@ -77,8 +77,9 @@ app.get(
   }
 );
 
+// GET a user by username
 app.get(
-  "users/:Name",
+  "/users/:Name",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Users.findOne({ Name: req.params.Name })
