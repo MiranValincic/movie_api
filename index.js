@@ -148,7 +148,7 @@ app.get(
 app.post(
   "/users",
   [
-    check("Name", "Name is required").isLength({ min: 5 }),
+    check("Name", "Name is required").isLength({ min: 2 }),
     check(
       "Name",
       "Name contains non alphanumeric characters - not allowed."
