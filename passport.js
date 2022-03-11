@@ -1,3 +1,5 @@
+/** @format */
+
 const passport = require("passport"),
   LocalStrategy = require("passport-local").Strategy,
   Models = require("./models.js"),
@@ -26,6 +28,11 @@ passport.use(
           return callback(null, false, {
             message: "Incorrect username or password.",
           });
+        }
+
+        if (!user.validatePassword(password)) {
+          console.log("Incorrect password");
+          return callback(null, false, { message: "incorrect password" });
         }
 
         console.log("finished");
