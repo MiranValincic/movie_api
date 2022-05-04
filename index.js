@@ -39,6 +39,7 @@ let allowedOrigins = [
   "http://testsite.com",
   "http://localhost:1234",
   "http://localhost:4200",
+  "https://miranvalincic.github.io/myFlix-Angular-client/",
 ];
 
 app.use(
