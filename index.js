@@ -71,7 +71,6 @@ app.get("/", (req, res) => {
 /**
  * Get all users
  * @method GET
- * @param {string} endpoint - endpoint to fetch users "url/users"
  * @requires authentication JWT
  */
 app.get(
@@ -91,8 +90,7 @@ app.get(
 
 /**
  * Get a single user
- * @method GET
- * @param {string} endpoint - endpoint to fetch single user "url/users/:Name"
+ * @method GET endpoint to fetch users
  * @requires authentication JWT
  */
 app.get(
@@ -116,8 +114,7 @@ app.get("/secreturl", (req, res) => {
 
 /**
  * Get all movies
- * @method GET
- * @param {string} endpoint - endpoint to fetch movies "url/movies"
+ * @method GET endpoint to fetch all movies
  * @requires authentication JWT
  */
 app.get(
@@ -137,8 +134,7 @@ app.get(
 
 /**
  * Get single movie by title
- * @method GET
- * @param {string} endpoint - endpoint to fetch single movie "url/movies/:Title"
+ * @method GET endpoint to fetch movie by a title
  * @requires authentication JWT
  */
 app.get(
@@ -158,8 +154,7 @@ app.get(
 
 /**
  * Get single genre by name
- * @method GET
- * @param {string} endpoint - endpoint to fetch single genre "url/genre/:Name"
+ * @method GET endpoint to fetch genre by name
  * @requires authentication JWT
  */
 app.get(
@@ -179,8 +174,7 @@ app.get(
 
 /**
  * Get director by name
- * @method GET
- * @param {string} endpoint - endpoint to fetch director by name "url/directors/:Name"
+ * @method GET endpoint to fetch director by name
  * @requires authentication JWT
  */
 app.get(
@@ -200,13 +194,7 @@ app.get(
 
 /**
  * Register user
- * @method POST
- * @param {string} endpoint - endpoint to add user. "url/users"
- * @param {string} Name - choosen by user
- * @param {string} Password - user's password
- * @param {string} Email - user's e-mail adress
- * @param {string} Born - user's birthday
- * @returns {object} - new user
+ * @method POST endpoint to register the user
  * @requires auth no authentication - public
  */
 app.post(
@@ -257,12 +245,7 @@ app.post(
 
 /**
  * Update user by username
- * @method PUT
- * @param {string} endpoint - endpoint to add user. "url/users/:Name"
- * @param {string} Name - required
- * @param {string} Password - user's new password
- * @param {string} Email - user's new e-mail adress
- * @param {string} Born - user's new birthday
+ * @method PUT endpoint to update user
  * @returns {string} - returns success/error message
  * @requires authentication JWT
  */
@@ -304,8 +287,7 @@ app.put(
 
 /**
  * Delete user profile
- * @method DELETE
- * @param {string} endpoint - endpoint to delete user data "url/users/:Name"
+ * @method DELETE endpoint to delete user profile
  * @param {string}  Name - both are required
  * @returns {string} - returns success/error message
  * @requires authentication JWT
@@ -331,8 +313,7 @@ app.delete(
 
 /**
  * Add movie to favorites
- * @method POST
- * @param {string} endpoint - endpoint to add movies to favorites "url/users/:Name/favorites/:MovieId"
+ * @method POST endpoint to add movie to favorites
  * @param {string} Title, Name - both are required
  * @returns {string} - returns success/error message
  * @requires authentication JWT
@@ -361,8 +342,7 @@ app.post(
 
 /**
  * Delete movie from favorites
- * @method DELETE
- * @param {string} endpoint - endpoint to remove movies from favorites "url/users/:Name/favorites/:MovieID"
+ * @method DELETE endpoint to delete movie from favorites
  * @param {string} Title, Name - both are required
  * @returns {string} - returns success/error message
  * @requires authentication JWT

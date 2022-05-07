@@ -99,7 +99,6 @@ app.get("/", (req, res) => {
 /**
  * Get all users
  * @method GET
- * @param {string} endpoint - endpoint to fetch users "url/users"
  * @requires authentication JWT
  */
 app.get(
@@ -119,8 +118,7 @@ app.get(
 
 /**
  * Get a single user
- * @method GET
- * @param {string} endpoint - endpoint to fetch single user "url/users/:Name"
+ * @method GET endpoint to fetch users
  * @requires authentication JWT
  */
 app.get(
@@ -144,8 +142,7 @@ app.get("/secreturl", (req, res) => {
 
 /**
  * Get all movies
- * @method GET
- * @param {string} endpoint - endpoint to fetch movies "url/movies"
+ * @method GET endpoint to fetch all movies
  * @requires authentication JWT
  */
 app.get(
@@ -165,8 +162,7 @@ app.get(
 
 /**
  * Get single movie by title
- * @method GET
- * @param {string} endpoint - endpoint to fetch single movie "url/movies/:Title"
+ * @method GET endpoint to fetch movie by a title
  * @requires authentication JWT
  */
 app.get(
@@ -186,8 +182,7 @@ app.get(
 
 /**
  * Get single genre by name
- * @method GET
- * @param {string} endpoint - endpoint to fetch single genre "url/genre/:Name"
+ * @method GET endpoint to fetch genre by name
  * @requires authentication JWT
  */
 app.get(
@@ -207,8 +202,7 @@ app.get(
 
 /**
  * Get director by name
- * @method GET
- * @param {string} endpoint - endpoint to fetch director by name "url/directors/:Name"
+ * @method GET endpoint to fetch director by name
  * @requires authentication JWT
  */
 app.get(
@@ -228,13 +222,7 @@ app.get(
 
 /**
  * Register user
- * @method POST
- * @param {string} endpoint - endpoint to add user. "url/users"
- * @param {string} Name - choosen by user
- * @param {string} Password - user's password
- * @param {string} Email - user's e-mail adress
- * @param {string} Born - user's birthday
- * @returns {object} - new user
+ * @method POST endpoint to register the user
  * @requires auth no authentication - public
  */
 app.post(
@@ -285,12 +273,7 @@ app.post(
 
 /**
  * Update user by username
- * @method PUT
- * @param {string} endpoint - endpoint to add user. "url/users/:Name"
- * @param {string} Name - required
- * @param {string} Password - user's new password
- * @param {string} Email - user's new e-mail adress
- * @param {string} Born - user's new birthday
+ * @method PUT endpoint to update user
  * @returns {string} - returns success/error message
  * @requires authentication JWT
  */
@@ -332,8 +315,7 @@ app.put(
 
 /**
  * Delete user profile
- * @method DELETE
- * @param {string} endpoint - endpoint to delete user data "url/users/:Name"
+ * @method DELETE endpoint to delete user profile
  * @param {string}  Name - both are required
  * @returns {string} - returns success/error message
  * @requires authentication JWT
@@ -359,8 +341,7 @@ app.delete(
 
 /**
  * Add movie to favorites
- * @method POST
- * @param {string} endpoint - endpoint to add movies to favorites "url/users/:Name/favorites/:MovieId"
+ * @method POST endpoint to add movie to favorites
  * @param {string} Title, Name - both are required
  * @returns {string} - returns success/error message
  * @requires authentication JWT
@@ -389,8 +370,7 @@ app.post(
 
 /**
  * Delete movie from favorites
- * @method DELETE
- * @param {string} endpoint - endpoint to remove movies from favorites "url/users/:Name/favorites/:MovieID"
+ * @method DELETE endpoint to delete movie from favorites
  * @param {string} Title, Name - both are required
  * @returns {string} - returns success/error message
  * @requires authentication JWT
@@ -436,13 +416,13 @@ app.listen(port, "0.0.0.0", () => {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#DELETE">DELETE</a></li><li><a href="global.html#express">express</a></li><li><a href="global.html#GET">GET</a></li><li><a href="global.html#POST">POST</a></li><li><a href="global.html#PUT">PUT</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#DELETEendpointtodeletemoviefromfavorites">DELETE endpoint to delete movie from favorites</a></li><li><a href="global.html#DELETEendpointtodeleteuserprofile">DELETE endpoint to delete user profile</a></li><li><a href="global.html#express">express</a></li><li><a href="global.html#GET">GET</a></li><li><a href="global.html#GETendpointtofetchallmovies">GET endpoint to fetch all movies</a></li><li><a href="global.html#GETendpointtofetchdirectorbyname">GET endpoint to fetch director by name</a></li><li><a href="global.html#GETendpointtofetchgenrebyname">GET endpoint to fetch genre by name</a></li><li><a href="global.html#GETendpointtofetchmoviebyatitle">GET endpoint to fetch movie by a title</a></li><li><a href="global.html#GETendpointtofetchusers">GET endpoint to fetch users</a></li><li><a href="global.html#POSTendpointtoaddmovietofavorites">POST endpoint to add movie to favorites</a></li><li><a href="global.html#POSTendpointtoregistertheuser">POST endpoint to register the user</a></li><li><a href="global.html#PUTendpointtoupdateuser">PUT endpoint to update user</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Thu May 05 2022 15:50:59 GMT+0200 (srednjoeuropsko ljetno vrijeme)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sat May 07 2022 11:44:10 GMT+0200 (srednjoeuropsko ljetno vrijeme)
 </footer>
 
 <script> prettyPrint(); </script>
